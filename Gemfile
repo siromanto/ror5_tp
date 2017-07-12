@@ -19,6 +19,10 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'bootstrap', '~> 4.0.0.alpha4'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'jquery-rails'
+
 gem 'simple_form'
 gem 'slim-rails'
 
