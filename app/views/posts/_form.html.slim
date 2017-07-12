@@ -1,0 +1,8 @@
+= simple_form_for @post do |p|
+  = p.error_notification
+
+  = p.input :title, label: 'title'
+  = p.input :summary
+  = p.input :body, :input_html => {:style=> 'height: 200px'}
+
+  = p.button :submit

@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'simple_form'
+gem 'slim-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -56,6 +57,7 @@ group :development, :test do
   gem 'selenium-webdriver'
 
   gem 'rubocop'
+  gem 'pry-rails' # better view for console objects
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
