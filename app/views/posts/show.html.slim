@@ -12,4 +12,4 @@ article.post
   section.post-body
     .img-show
       = image_tag @post.image.url(:large) if @post.image?
-    = @post.body
+    = @post.body.html_safe
