@@ -1,8 +1,17 @@
-= simple_form_for @post do |p|
-  = p.error_notification
+= form_for(@post, html: {multipart: true}) do |f|
 
-  = p.input :title, label: 'title'
-  = p.input :summary
-  = p.input :body, :input_html => {:style=> 'height: 200px'}
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: 'form-control'
 
-  = p.button :submit
+  .form-group
+    = f.label :summary
+    = f.text_field :summary, class: 'form-control'
+
+  .form-group
+    = f.label :body
+    = f.text_field :body, class: 'form-control'
+
+  .form-group
+    = f.submit 'Save', class: 'btn btn-primary'
+    = link_to 'Back', :back, class: 'btn btn-outline-secondary'
