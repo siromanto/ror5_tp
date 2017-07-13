@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Ror5Tp
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .container
+      nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
+        button.navbar-toggler.navbar-toggler-right aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button" 
+          span.navbar-toggler-icon
+        a.navbar-brand href=posts_path  TP
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item.active
+              a.nav-link href=posts_path  All posts
+            li.li
+              a.nav-link.active href=new_post_path  New post
+            li.nav-item
+              a.nav-link href="#"  Contacts
+    .container.main
+      .row
+        .col-md-12
+          - flash.each do |name, message|
+            div class=("alert alert-#{name}") 
+              = message
+      = yield

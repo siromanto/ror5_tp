@@ -17,9 +17,9 @@ class PostsController < ApplicationController
     @post = Post.new(page_params)
     # @post.user = current_user # додавання id поточного юзера
     if @post.save
-      redirect_to @post
+      redirect_to @post, success: 'Post successfuly created'
     else
-      render :new
+      render :new, danger: 'Post doesn\'t created'
     end
   end
 
@@ -36,9 +36,9 @@ class PostsController < ApplicationController
 
   def destroy
     if @post.destroy
-      redirect_to posts_path
+      redirect_to posts_path, success: 'Post successfuly deleted'
     else
-      redirect_to posts_path, flash: {error: 'Something goes wrong'}
+      redirect_to posts_path, danger: 'Something goes wrong'
     end
   end
 
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   private
 
   def page_params
-    params.require(:post).permit(:title, :summary, :body)
+    params.require(:post).permit(:title, :summary, :body, :image)
   end
 
   def find_post
