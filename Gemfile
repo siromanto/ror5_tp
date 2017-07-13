@@ -26,6 +26,9 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'slim-rails'
 
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick" # for carrierwave
+
 gem 'trix'
 
 # Use CoffeeScript for .coffee assets and views

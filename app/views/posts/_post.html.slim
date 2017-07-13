@@ -9,5 +9,8 @@ article.post
       |  | 
       = link_to 'Delete', post_path(post), method: :delete, data:{confirm: 'Are you sure?'}
 
-  section.post-summary
+  section.post-summary.clearfix
+    -if post.image?
+      .img-thumbnail.thumb
+        = image_tag post.image.url(:thumb) 
     = post.summary
