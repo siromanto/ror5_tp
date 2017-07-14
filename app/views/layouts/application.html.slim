@@ -20,10 +20,22 @@ html
               a.nav-link.active href=new_post_path  New post
             li.nav-item
               a.nav-link href="#"  Contacts
+          ul.navbar-nav.pull-xs-right
+            - if user_signed_in?
+              li.nav-item
+                = link_to "Выход", destroy_user_session_path, method: :delete, class: "nav-link"
+            - else
+              li.nav-item
+                = link_to "Вход", new_user_session_path, class: "nav-link"
+              li.nav-item
+                = link_to "Регистрация", new_user_registration_path, class: "nav-link"
+
+
     .container.main
       .row
         .col-md-12
           - flash.each do |name, message|
-            div class=("alert alert-#{name}") 
+            div class=("alert #{bootstrap_class_for(name)}") 
+              button.close data-dismiss="alert" &times;
               = message
       = yield

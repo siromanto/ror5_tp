@@ -26,6 +26,8 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'slim-rails'
 
+gem 'devise'
+
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick" # for carrierwave
 
@@ -55,6 +57,8 @@ group :development do
 
   gem 'annotate' # annotating models
   gem 'better_errors' # for views
+
+   gem "letter_opener"
 
 end
 
