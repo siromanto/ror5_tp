@@ -58,6 +58,8 @@ group :development do
   gem 'annotate' # annotating models
   gem 'better_errors' # for views
 
+   gem "letter_opener"
+
 end
 
 group :development, :test do
